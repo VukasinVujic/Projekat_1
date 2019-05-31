@@ -11,8 +11,15 @@
 |
 */
 
+
+Route::get('/todos', 'TodosController@index');
+
+Route::get('/new', 'PagesController@new');
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/new', 'PagesController@new');
+Route::post('/create/todo' , 'TodosController@store');
+
+Route::get('/todo/delete/{id}' , 'TodosController@delete')->name('todo.delete');
