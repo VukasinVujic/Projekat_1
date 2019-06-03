@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 12px;
+                font-size: 20px;
                 color:black;
             }
 
@@ -66,6 +66,14 @@
         </style>
     </head>
     <body>
+        @if(Session::has('success'))
+
+        <div class="alert alert-success" role="alert">
+                {{Session::get('success')}}
+        </div>
+
+        @endif
+
         <div class="flex-center position-ref full-height">
         
 
